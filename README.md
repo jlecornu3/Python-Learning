@@ -7,4 +7,4 @@ I'm working on learning the basics of Python and starting to experiment with ope
 
 I'm new to GitHub, am learning the format and how it can be used.
 
-Uploaded currently are a sample of the scripts that I have worked through via Online courses (available from my emails), although given the current pandemic scenario I am not currently in Oxford so do not have access to my full set of scripts and no longer have access to the raw data files. 
+Uploaded currently are a sample of the scripts that I have worked through via Online courses (available from my emails). Given the current pandemic scenario I am not currently in Oxford, so do not have access to my full set of scripts and and raw data files. There are various sample datasets available, but again these are only those I was able to recover without access to my harddrive. 
