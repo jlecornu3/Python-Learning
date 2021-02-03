@@ -1,11 +1,13 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# ML in SciKit Learn Examples
 
 from sklearn import datasets
-from sklearn.model_selection import train_test_split
 import numpy as np
+import pandas as pd
+from sklearn import neighbors, metrics
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn import svm
+from sklearn.metrics import accuracy_score
 
 iris = datasets.load_iris()
 
@@ -28,12 +30,6 @@ print(y_train.shape)
 print(y_test.shape)
 
 # KNN Example
-import numpy as np
-import pandas as pd
-from sklearn import neighbors, metrics
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-
 data = pd.read_csv('car.data')
 print(data.head())
 
@@ -84,3 +80,29 @@ a = 10
 print("actual value: ", y[a])
 print("prediction: ", knn.predict(X)[a])
 
+# Support Vector Machines
+iris_svm = datasets.load_iris()
+
+# Split it into features and labels
+X_svm = iris_svm.data
+y_svm = iris_svm.target
+
+classes = ['Iris Setosa', 'Iris Versicolour','Iris Virginica']
+print(X_svm.shape)
+print(y_svm.shape)
+
+X_train_svm, X_test_svm, y_train_svm, y_test_svm = train_test_split(X_svm,y_svm,test_size=0.2)
+
+model_svm = svm.SVC()
+model_svm.fit(X_train_svm,y_train_svm)
+print(model_svm)
+
+prediction_svm = model_svm.predict(X_test_svm)
+acc_svm = accuracy_score(y_test_svm, prediction_svm)
+print("SVM predictions: ", prediction_svm)
+print("SVM actual:", y_test_svm)
+print("SVM accuracy: ", acc_svm)
+
+# Look at Names in ForLoop
+for i in range(len(prediction_svm)):
+    print(classes[prediction_svm[i]])
